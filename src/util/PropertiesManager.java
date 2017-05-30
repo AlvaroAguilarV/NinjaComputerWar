@@ -8,7 +8,7 @@ package util;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-import net.juanxxiii.j23gameengine.GameEngine;
+import net.juanxxiii.j23gameengine.gui.GameEngine;
 
 /**
  *

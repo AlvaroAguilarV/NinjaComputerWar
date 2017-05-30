@@ -9,7 +9,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
-import net.juanxxiii.j23gameengine.GameEngine;
 import net.juanxxiii.j23gameengine.util.SoundPlayer;
 
 /**

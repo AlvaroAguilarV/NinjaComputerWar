@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import static java.lang.Thread.sleep;
 import javax.imageio.ImageIO;
-import net.juanxxiii.j23gameengine.GameEngine;
+import net.juanxxiii.j23gameengine.gui.GameEngine;
 import net.juanxxiii.j23gameengine.gui.JPGameScreen;
 
 /**
