@@ -12,18 +12,29 @@ import java.awt.image.BufferedImage;
  * @author dam1b
  */
 public abstract class Enemigo {
-    private float vida;
-    private float velocidad;
-    private int coordX;
-    private int coordY;
-    private BufferedImage imagen;
+    float vida;
+    float danyo;
+    float velocidad;
+    int coordX;
+    int coordY;
+    BufferedImage imagen;
 
-    public Enemigo(float vida, float velocidad, int coordX, int coordY, BufferedImage imagen) {
+    public Enemigo(float vida, float danyo, float velocidad, int coordX, int coordY, BufferedImage imagen) {
         this.vida = vida;
+        this.danyo = danyo;
         this.velocidad = velocidad;
         this.coordX = coordX;
         this.coordY = coordY;
         this.imagen = imagen;
+        
+    }
+
+    public float getDanyo() {
+        return danyo;
+    }
+
+    public void setDanyo(float danyo) {
+        this.danyo = danyo;
     }
     
     public abstract void recibirImpacto();
