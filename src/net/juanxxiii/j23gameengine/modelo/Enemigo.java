@@ -5,6 +5,7 @@
  */
 package net.juanxxiii.j23gameengine.modelo;
 
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 /**
@@ -26,9 +27,14 @@ public abstract class Enemigo {
         this.coordX = coordX;
         this.coordY = coordY;
         this.imagen = imagen;
-        
     }
+    
+    public abstract void recibirImpacto();
 
+    public void pintar(Graphics2D g2d){
+        g2d.drawImage(imagen, coordX, coordY, null);
+    }   
+    
     public float getDanyo() {
         return danyo;
     }
@@ -36,8 +42,6 @@ public abstract class Enemigo {
     public void setDanyo(float danyo) {
         this.danyo = danyo;
     }
-    
-    public abstract void recibirImpacto();
 
     public float getVida() {
         return vida;
