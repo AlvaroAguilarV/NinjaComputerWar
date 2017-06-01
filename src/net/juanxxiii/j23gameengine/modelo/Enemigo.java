@@ -11,7 +11,7 @@ import java.awt.image.BufferedImage;
  *
  * @author dam1b
  */
-public class Enemigo {
+public abstract class Enemigo {
     private float vida;
     private float velocidad;
     private int coordX;
@@ -25,6 +25,8 @@ public class Enemigo {
         this.coordY = coordY;
         this.imagen = imagen;
     }
+    
+    public abstract void recibirImpacto();
 
     public float getVida() {
         return vida;
