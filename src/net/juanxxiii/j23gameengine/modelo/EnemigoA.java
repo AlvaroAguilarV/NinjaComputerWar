@@ -6,6 +6,9 @@
 package net.juanxxiii.j23gameengine.modelo;
 
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import net.juanxxiii.j23gameengine.gui.JPGameScreen;
 
 /**
  *
@@ -13,13 +16,13 @@ import java.awt.image.BufferedImage;
  */
 public class EnemigoA extends Enemigo{
 
-    public EnemigoA(float vida, float danyo, float velocidad, int coordX, int coordY, BufferedImage imagen) {
-        super(vida, danyo, velocidad, coordX, coordY, imagen);
+    public EnemigoA() throws IOException {
+         super(100, 20, 1, 0, 100, ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/A.png")));
     }
 
     @Override
     public void recibirImpacto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
 }
