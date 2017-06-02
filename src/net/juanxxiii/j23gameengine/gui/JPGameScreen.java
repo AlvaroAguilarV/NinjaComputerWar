@@ -16,6 +16,7 @@ import java.io.IOException;
 import static java.lang.Thread.sleep;
 import javax.imageio.ImageIO;
 import net.juanxxiii.j23gameengine.modelo.EnemigoA;
+import net.juanxxiii.j23gameengine.modelo.EnemigoJ;
 import net.juanxxiii.j23gameengine.util.SoundPlayer;
 
 /**
@@ -27,6 +28,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
     BufferedImage bg;//Imagen de fondo
     Spaceship nave;
     EnemigoA alvaro;
+    EnemigoJ julio;
 
     /**
      * Creates new form JPGameScreen
@@ -115,6 +117,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
         //Pinta los elementos
         g2d.drawImage(nave.getNave(), nave.getxNave(), nave.getyNave(), null);
         alvaro.pintar(g2d);
+        julio.pintar(g2d);
     }
 
     /**
@@ -165,6 +168,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
             bg = ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/bg.jpg"));
             nave = new Spaceship();
             alvaro = new EnemigoA();
+            julio = new EnemigoJ(); 
             new Thread(nave).start();
         } catch (IOException ex) {
             ex.printStackTrace();
