@@ -9,6 +9,7 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import net.juanxxiii.j23gameengine.gui.JPGameScreen;
 
 /**
  *
@@ -16,8 +17,8 @@ import javax.imageio.ImageIO;
  */
 public class EnemigoR extends Enemigo implements Runnable{
     
-    public EnemigoR(float vida, float danyo, float velocidad, int coordX, int coordY, BufferedImage imagen) throws IOException {
-        super(100, 15, 1, 700, 400, ImageIO.read(ClassLoader.getSystemResource("assets/RVivo.jpg")));
+    public EnemigoR() throws IOException {
+        super(100, 15, 1, 0, 350, ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/RVivo.png")));
     }
 
     @Override
