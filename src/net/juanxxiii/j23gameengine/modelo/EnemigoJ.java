@@ -7,6 +7,10 @@ package net.juanxxiii.j23gameengine.modelo;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import static java.lang.Thread.sleep;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
 /**
@@ -21,12 +25,25 @@ public class EnemigoJ extends Enemigo implements Runnable{
     
     @Override
     public void recibirImpacto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     @Override
     public void run() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        while(true){
+            try {
+                coordX++;
+                if(vida<30){
+                    sleep(10);
+                } else if (vida<70){
+                    sleep(20);
+                } else {
+                    sleep(30);
+                }
+                
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+    }
         
     }
     /*
