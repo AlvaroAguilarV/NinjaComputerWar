@@ -28,7 +28,6 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
     BufferedImage bg;//Imagen de fondo
     Spaceship nave;
     EnemigoA alvaro;
-    EnemigoJ julio;
 
     /**
      * Creates new form JPGameScreen
@@ -117,7 +116,6 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
         //Pinta los elementos
         g2d.drawImage(nave.getNave(), nave.getxNave(), nave.getyNave(), null);
         alvaro.pintar(g2d);
-        julio.pintar(g2d);
     }
 
     /**
@@ -167,8 +165,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
         try {
             bg = ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/bg.jpg"));
             nave = new Spaceship();
-            alvaro = new EnemigoA();
-            julio = new EnemigoJ(); 
+            alvaro = new EnemigoA(); 
             new Thread(nave).start();
         } catch (IOException ex) {
             ex.printStackTrace();
