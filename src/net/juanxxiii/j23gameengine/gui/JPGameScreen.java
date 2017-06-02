@@ -175,8 +175,8 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
             roberto = new EnemigoR();
             new Thread(nave).start();
             new Thread(alvaro).start();
-            new Thread(julio).start();
-            new Thread(roberto).start();
+            //new Thread(julio).start();
+            //new Thread(roberto).start();
         } catch (IOException ex) {
             ex.printStackTrace();
         }

@@ -17,25 +17,32 @@ import net.juanxxiii.j23gameengine.gui.JPGameScreen;
  *
  * @author dam1b
  */
-public class EnemigoA extends Enemigo implements Runnable{
+public class EnemigoA extends Enemigo implements Runnable {
 
     public EnemigoA() throws IOException {
-         super(100, 20, 1, 0, 100, ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/A.png")));
+        super(100, 20, 1, -100, 100, ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/A.png")));
     }
 
     @Override
     public void recibirImpacto() {
-        
+
     }
 
     @Override
     public void run() {
-        try {
-            coordX++;
-            sleep(10);
-        } catch (InterruptedException ex) {
-            ex.printStackTrace();
+        boolean subiendo =false;
+        while (true) {
+            try {
+                coordX++;
+                if(coordY > 50){
+                    coordY--;
+                }else if(coordY < 50){
+                    
+                }
+                sleep(30);
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
         }
     }
-    
 }
