@@ -14,7 +14,7 @@ import javax.imageio.ImageIO;
  *
  * @author Rober
  */
-public class EnemigoR extends Enemigo{
+public class EnemigoR extends Enemigo implements Runnable{
     
     public EnemigoR(float vida, float danyo, float velocidad, int coordX, int coordY, BufferedImage imagen) throws IOException {
         super(100, 15, 1, 700, 400, ImageIO.read(ClassLoader.getSystemResource("assets/RVivo.jpg")));
@@ -24,5 +24,14 @@ public class EnemigoR extends Enemigo{
     public void recibirImpacto() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    @Override
+    public void run() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+    }
+    /*
+    crear objeto
+    new Thread(NObjeto).start();
+    */
 }
