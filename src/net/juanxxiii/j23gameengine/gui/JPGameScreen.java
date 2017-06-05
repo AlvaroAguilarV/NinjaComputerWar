@@ -11,9 +11,13 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import static java.lang.Thread.sleep;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import net.juanxxiii.j23gameengine.modelo.EnemigoA;
 import net.juanxxiii.j23gameengine.modelo.EnemigoJ;
@@ -24,7 +28,7 @@ import net.juanxxiii.j23gameengine.util.SoundPlayer;
  *
  * @author Profesor
  */
-public class JPGameScreen extends javax.swing.JPanel implements Runnable {
+public class JPGameScreen extends javax.swing.JPanel implements Runnable, MouseListener {
 
     BufferedImage bg;//Imagen de fondo
     Spaceship nave;
@@ -39,6 +43,8 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
         initComponents();
         //Cargamos los recursos
         loadResources();
+        //Llamamos al Listener
+        addMouseListener(this);
         //Hacemos que el panel sea 'focusable' para aceptar eventos
         this.setFocusable(true);
         //Creamos los listener
@@ -180,6 +186,50 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        //Pruebas Colision
+//        System.out.println("MaloX: "+alvaro.getCoordX()+ "AnchoMalo: "+ (alvaro.getCoordX()+alvaro.getAncho()));
+//        System.out.println("MaloY: "+alvaro.getCoordY()+ "AltoMalo: "+ (alvaro.getCoordY()+alvaro.getAlto()));
+//        System.out.println("ratonX: "+e.getX());
+//        System.out.println("ratonY: "+e.getY());
+        if((e.getX() >= alvaro.getCoordX() && e.getX() <= alvaro.getCoordX()+alvaro.getAncho()) && 
+                (e.getY() >= alvaro.getCoordY() && e.getY() <=  alvaro.getCoordY() + alvaro.getAlto())){
+            try {
+                alvaro.setImagen(ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/muerte.png")));
+                alvaro.setEstado(false);
+                sleep(30);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+            System.out.println("Colision!!"); 
+        }
+        //if(e.getX() < e.getX()+alvaro.getAncho())
+        
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 
